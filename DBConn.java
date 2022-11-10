@@ -3,7 +3,7 @@ import java.sql.*;
 public class DBConn {
 Connection conn = null;
 String dbName  = "capstone";
-String dbUrl = "jdbc:mysql://localhost::3306/" + dbName;
+String dbUrl = "jdbc:mysql://localhost:3306/" + dbName;
 
 String dbUser ="root";
 String dbPass = "root";

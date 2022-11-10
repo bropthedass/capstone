@@ -8,7 +8,7 @@ public class PAS {
 
         CustomerAcc cust = new CustomerAcc();
         Scanner sc = new Scanner(System.in);
-
+        String fName, lName, address;
         System.out.println("1. Create a new Customer Account");
         System.out.println("2. Get a policy quote and buy the policy");
         System.out.println("3. Cancel a specific policy");
@@ -23,16 +23,34 @@ public class PAS {
 
         switch (choice) {
             case 1:
+            sc.nextLine();
+                System.out.print("Enter first name: ");
+                fName = sc.nextLine();
+
+                System.out.print("Enter last name: ");
+                lName = sc.nextLine();
+
+                System.out.print("Enter Address: ");
+                address = sc.nextLine();
+
+                try {
+                    cust.addCustomer(fName, lName, address);
+                    System.out.printf("Welcome %s %s your account has been succesfully created!",fName ,lName );
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                break;
             case 2:
             case 3:
             case 4:
 
             case 5:
                 System.out.print("Enter first name: ");
-                String fName = sc.nextLine();
+                fName = sc.nextLine();
                 sc.nextLine();
                 System.out.print("Enter last name: ");
-                String lName = sc.nextLine();
+                lName = sc.nextLine();
                 cust.searchName(fName, lName);
                 break;
 
